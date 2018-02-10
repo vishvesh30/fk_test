@@ -23,9 +23,9 @@ review_user_list = []
 review_date_list = []
 review_star_list = []
 output_file = open('data.json', 'w', encoding='utf-8')
-logging.basicConfig(filename="logs/test.log",format='%(asctime)s %(message)s',filemode='w',level=logging.DEBUG)
+logging.basicConfig(filename="logs/test.log",format='%(asctime)s %(message)s',filemode='w',level=logging.INFO)
 logging.info("Program Started")
-
+print("start")
 def product_list():
     url = "https://www.flipkart.com/air-conditioners/pr?sid=j9e,abm,c54&otracker=categorytree"
 
@@ -70,7 +70,8 @@ def review(link, total_pages, product_name):
             page)
         # print(url)
         driver3.get(url)
-
+        print(url)
+        logging.info(url)
         for span_more in driver3.find_elements_by_class_name("_1EPkIx"):
             span_more.click()
         for whole_block in driver3.find_elements_by_xpath('//div[@class="col _390CkK"]'):
@@ -115,6 +116,7 @@ def process(product_name):
 
 
 def write():
+    print("writing")
     json.dump(final_data, output_file)
     print(final_data.__len__())
 
