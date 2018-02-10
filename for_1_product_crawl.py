@@ -9,11 +9,11 @@ from selenium.webdriver.common.keys import Keys
 options = webdriver.FirefoxOptions()
 options.set_headless()
 # driver1 = webdriver.Firefox()
-driver2 = webdriver.Firefox()
+driver2 = webdriver.Firefox(options=options)
 
 # options = webdriver.ChromeOptions()
 # options.binary_location = "C:\\Program Files (x86)\\Opera\\50.0.2762.67\\opera.exe"# path to opera executable
-driver3 = webdriver.Firefox()
+driver3 = webdriver.Firefox(options=options)
 final_data = []
 # final_data['Product'] = []
 product_data = {}
